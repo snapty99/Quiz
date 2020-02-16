@@ -1,0 +1,37 @@
+5.2
+(ทดสอบ sql) ต้องการเพิ่มสาขาที่จังหวัด เชียงใหม่ เชียงรายและภูเก็ต
+ตอบ 
+INSERT INTO 'DB_BRANCH' value ('ADDNAMEBRANCH') ON PROVINCENAME='เชียงใหม่' 
+AND PROVINCENAME='เชียงราย'  AND PROVINCENAME='ภูเก็ต'
+
+5.3
+(ทดสอบ sql) ต้องการลบตําแหน่ง sale
+ตอบ
+DELETE sale FROM DB_POSITION
+
+5.4
+(ทดสอบ sql) ต้องการแก้ไข สาขาปัตตานี เป็น นราธิวาส
+ตอบ
+UPDATE DB_BRANCH
+SET BRANCHNAME = 'นาราธิวาส';
+WHERE BRANCHNAME = 'ปัตตานี';
+
+5.5
+(ทดสอบ sql) ต้องการแสดงข้อมูลพนักงานบริษัท Master-programmer ทั้งหมด 400 คน
+ตอบ
+SELECT * FROM STAFF
+
+5.6
+(ทดสอบ sql) ต้องการแสดงข้อมูลพนักงานบริษัท master-programmer ที่ อยู่ในสาขาระยอง และกรุงเทพ
+ตอบ
+SELECT * FROM STAFF WHERE BRANCHNAME = 'ระยอง' AND BRANCHNAME = 'กรุงเทพ'
+
+5.7
+(ทดสอบ sql) ต้อองการแสดงข้อมูลพนักงานบริษัท master-programmer ที่ อยู่ในสาขาเลย และมีตําแหน่งเป็น programmer
+ตอบ
+SELECT * FROM STAFF WHERE BRANCHNAME = 'เลย' AND POSITIONNAME = 'programmer'
+
+5.8
+(ทดสอบ sql) ต้องการแสดงข้อมูลพนักงาน โดยมีข้อมูล สาขาและตําแหน่งของพนักงานแต่ละคน ในบริษัท master-programmer ทั้งหมด
+ตอบ
+SELECT NAME, BRANCHNAME, POSITIONNAME FROM STAFF
